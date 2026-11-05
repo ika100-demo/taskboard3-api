@@ -10,6 +10,7 @@ tasks:
     covers: [AC-001.1, AC-001.2, AC-001.3, AC-001.5, AC-001.6, AC-001.7, AC-001.8, AC-001.9, AC-001.10, AC-001.11, AC-001.13]
     parallel_safe: true
     depends_on: []
+    done: true
   - id: t2
     title: Expose POST /tasks and GET /tasks via a router wired into the app
     files: [src/taskboard3_api/tasks/api.py, src/taskboard3_api/tasks/__init__.py, src/taskboard3_api/main.py]
