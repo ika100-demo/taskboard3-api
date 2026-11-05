@@ -1,7 +1,7 @@
 ---
 spec_id: 002-store-tasks-in-postgres-instead-of
 title: Store tasks in Postgres instead of memory, with 503 and not-ready while the database is down
-status: building
+status: done
 priority: P1
 shape: service-python
 parent: ika100-demo/taskboard3-gitops:001-tasks-in-postgres-seen-and-created-in
@@ -180,3 +180,4 @@ Probes:
 - 2026-11-05 amended: the four open questions answered with the suggested answers and struck through; AC-002.13 now also states `/ready` `503` and that the API does not refuse to start; added "Decisions taken during the ship".
 - 2026-11-05 approved
 - 2026-11-05 building
+- 2026-11-06 done
