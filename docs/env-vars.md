@@ -9,6 +9,12 @@ Configuration is read exclusively from environment variables. Defaults below are
 | `PORT` | `8080` | HTTP port the service listens on. |
 | `LOG_LEVEL` | `INFO` | Logging level. One of `DEBUG`, `INFO`, `WARNING`, `ERROR`. |
 
+## Database
+
+| Variable | Default | Description |
+|---|---|---|
+| `DATABASE_URL` | _(unset)_ | libpq URL of the Postgres database, of the form `postgresql://<user>:<password>@<host>:5432/<db>`; set by the system's gitops `uses: postgres`. When unset or empty the API still starts, but does not connect at all (no fallback to `PG*`), `/ready` answers 503 and `/tasks` answers 503 `{"detail": "database unavailable"}`. libpq may still fill parts the URL leaves out from `PG*`. |
+
 ## Observability
 
 | Variable | Default | Description |
