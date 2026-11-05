@@ -17,6 +17,7 @@ tasks:
     covers: [AC-002.1, AC-002.2, AC-002.3, AC-002.4, AC-002.5, AC-002.6, AC-002.7, AC-002.9, AC-002.10, AC-002.11, AC-002.12]
     parallel_safe: true
     depends_on: [t1]
+    done: true
   - id: t3
     title: App factory, database readiness probe and 503/500 JSON handlers
     files: [src/taskboard3_api/main.py]
