@@ -24,6 +24,7 @@ tasks:
     covers: [AC-002.8, AC-002.9, AC-002.10, AC-002.12, AC-002.13, AC-002.14, AC-002.15, AC-002.16]
     parallel_safe: true
     depends_on: [t1]
+    done: true
 ---
 
 # Plan — 002 Store tasks in Postgres instead of memory
