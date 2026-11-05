@@ -6,9 +6,9 @@ from collections.abc import Iterator
 
 import pytest
 from fastapi.testclient import TestClient
-from taskboard3_api.tasks import TaskStore, get_task_store
 
 from taskboard3_api.main import app
+from taskboard3_api.tasks import TaskStore, get_task_store
 
 
 @pytest.fixture()
