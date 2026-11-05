@@ -17,7 +17,6 @@ NOT_READY = {"status": "not ready"}
 
 def _app(url: str | None) -> TestClient:
     from taskboard3_api.db import Database
-
     from taskboard3_api.main import create_app
 
     return TestClient(create_app(Database.from_url(url)))
@@ -141,6 +140,10 @@ def table_lock(clean_tasks: str) -> Iterator[Callable[[], None]]:
     if "proc" in state:
         state["proc"].kill()
         state["proc"].wait()
+        # Killing psql leaves its backend running pg_sleep with the lock held: end it too.
+        terminate = "SELECT count(pg_terminate_backend(pid)) FROM pg_stat_activity"
+        terminate += " WHERE pid <> pg_backend_pid() AND query LIKE '%LOCK TABLE tasks%'"
+        run_psql(clean_tasks, terminate)
 
 
 def test_slow_statement_gives_503(
@@ -246,7 +249,6 @@ def test_ready_503_when_unreachable_then_recovers(
     clean_tasks: str,
 ) -> None:  # AC-002.15
     from taskboard3_api.db import Database
-
     from taskboard3_api.main import create_app
 
     with socket.socket() as silent:

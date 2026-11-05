@@ -11,7 +11,6 @@ from fastapi.testclient import TestClient
 @pytest.fixture()
 def api(clean_tasks: str) -> Iterator[TestClient]:
     from taskboard3_api.db import Database
-
     from taskboard3_api.main import create_app
 
     yield TestClient(create_app(Database.from_url(clean_tasks)))
