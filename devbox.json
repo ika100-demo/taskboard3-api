@@ -9,7 +9,8 @@
     "detect-secrets@1.5.0",
     "trivy@0.74.0",
     "git@latest",
-    "gh@latest"
+    "gh@latest",
+    "postgresql@16"
   ],
   "shell": {
     "init_hook": ["uv sync --all-extras 2>/dev/null || true"],

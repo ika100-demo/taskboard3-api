@@ -1,4 +1,4 @@
-"""Tasks feature: models, in-memory store and HTTP router."""
+"""Tasks feature: models, Postgres store and HTTP router."""
 
 from taskboard3_api.tasks.api import router
 from taskboard3_api.tasks.models import Task, TaskCreate
