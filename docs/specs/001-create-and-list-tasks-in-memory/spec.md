@@ -1,7 +1,7 @@
 ---
 spec_id: 001-create-and-list-tasks-in-memory
 title: Create and list tasks (in memory)
-status: draft
+status: approved
 priority: P1
 shape: service-python
 ---
@@ -57,3 +57,4 @@ The Task API exists, but it does not yet handle tasks: it only answers health, r
 
 - 2026-11-05 created
 - 2026-11-05 amended: open questions answered; added AC-001.13 (past due dates accepted unchanged); non-goals now exclude a task-count limit and `created_at`
+- 2026-11-05 approved
