@@ -10,6 +10,7 @@ tasks:
     covers: [AC-002.6, AC-002.8, AC-002.9, AC-002.10, AC-002.13, AC-002.15]
     parallel_safe: true
     depends_on: []
+    done: true
   - id: t2
     title: Replace the in-memory TaskStore with the Postgres store
     files: [src/taskboard3_api/tasks/store.py, src/taskboard3_api/tasks/__init__.py]

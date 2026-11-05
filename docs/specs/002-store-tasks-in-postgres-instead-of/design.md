@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS tasks (
 
 | Variable | Default | Description |
 |---|---|---|
-| `DATABASE_URL` | _(unset: the API starts, `/ready` and `/tasks` answer `503`)_ | libpq URL, e.g. `postgresql://user:pass@host:5432/db`; set by the system's gitops `uses: postgres`. When it is unset or empty the app does not connect at all (no fallback to `PG*`); libpq may still fill parts the URL leaves out from `PG*`. |
+| `DATABASE_URL` | _(unset: the API starts, `/ready` and `/tasks` answer `503`)_ | libpq URL, e.g. `postgresql://<user>:<password>@<host>:5432/<db>`; set by the system's gitops `uses: postgres`. When it is unset or empty the app does not connect at all (no fallback to `PG*`); libpq may still fill parts the URL leaves out from `PG*`. |
 
 ## Testing notes (for the testers; the files are theirs)
 
