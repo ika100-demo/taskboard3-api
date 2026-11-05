@@ -26,7 +26,8 @@ class TaskStore:
                 "RETURNING id, title, due_date",
                 (str(uuid.uuid4()), data.title, due),
             ).fetchone()
-        assert row is not None  # noqa: S101 - INSERT ... RETURNING always yields a row
+        if row is None:
+            raise RuntimeError("INSERT ... RETURNING returned no row")
         return Task(
             id=row[0],
             title=row[1],
